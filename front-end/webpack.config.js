@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 console.log('directory is ', __dirname);
 
 module.exports = {
@@ -14,15 +13,15 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
     module : {
         loaders: [
             {
                 test   : /\.jsx?$/,
-                loaders: ['react-hot', 'babel'],
-                path   : path.join(__dirname, 'src')
+                loader : 'babel-loader',
+                path   : path.join(__dirname, 'src'),
+                query  : {
+                    presets: ['es2015', 'react']
+                }
             }
         ]
     }
