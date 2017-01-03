@@ -11,17 +11,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: [''/*for react*/, '.js', '.jsx']
     },
     module : {
         loaders: [
             {
                 test   : /\.jsx?$/,
                 loader : 'babel-loader',
-                path   : path.join(__dirname, 'src'),
-                query  : {
-                    presets: ['es2015', 'react']
-                }
+                path   : path.join(__dirname, 'src')
             }
         ]
     }
