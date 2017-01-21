@@ -7,4 +7,4 @@ import Sample from './sample'
 render(
     <Sample />,
     $('#component').get(0)
-)
+);
